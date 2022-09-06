@@ -11,7 +11,16 @@ console.log("expect 16470.09", compoundInterest(10000, 5, 10));
  */
 
 
-function getBalance(inAmount,intRate,nYearsToCom){
+function compoundInterest(inAmount,intRate,nYearsToCom){
+    let balance=0;
+   let  monthlyRate = intRate / 12 / 100;
+    let months = nYearsToCom * 12;
 
-    
+    for ( i = 1; i <= months; i++ ) {
+        balance = (balance + inAmount) * (1 + monthlyRate);
+     }
+     return balance;
+
 }
+console.log("expect 110.47", compoundInterest(100, 10, 1));
+console.log("expect 16470.09", compoundInterest(10000, 5, 10));
