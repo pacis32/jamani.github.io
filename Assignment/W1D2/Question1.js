@@ -16,7 +16,7 @@ first 500)
 
  */
 
-
+module.exports = { computeSalesCommission};
 function computeSalesCommission(salaried, sales){
     let commission=0;
 
