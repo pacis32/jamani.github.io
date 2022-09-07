@@ -8,6 +8,12 @@ Do not look up mathematical formulas for how to compute compound interest. Use a
 add the appropriate interest each month.
 console.log("expect 110.47", compoundInterest(100, 10, 1));
 console.log("expect 16470.09", compoundInterest(10000, 5, 10));
+
+
+Inputs:
+. initial amount/number
+• annual interest rate/number
+• number of years to compound/number
  */
 
 

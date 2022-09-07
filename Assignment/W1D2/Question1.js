@@ -13,6 +13,7 @@ first 500)
 • 2% for sales between $300 and $500 (inclusive, and commission on the entire amount)
 • 3% for sales above $500 (only for the portion above 500 plus the 2% commission on the
 first 500)
+
  */
 
 
@@ -48,5 +49,4 @@ console.log("expect 3: ", computeSalesCommission(true, 300));
 console.log("expect 6: ", computeSalesCommission(false, 300));
 console.log("expect 65: ", computeSalesCommission(true, 3500));
 console.log("expect 100: ", computeSalesCommission(false, 3500));
-//console.log(res);
-//let res= computeSalesCommission(false,3500);
+
