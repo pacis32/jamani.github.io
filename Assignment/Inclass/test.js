@@ -7,9 +7,33 @@
  */
 
 
- const foo = console.log("hello");
+ function findLongestWord(arr){
+   let longest=arr[0];
+   for(let i=0; i<arr.length; i++){
 
- function write2file(content) {
-    fsys.writeFile("./testWrite.txt", content, function () {});
- }
-    const returnVal = write2file( Math.max(1, 2, 3));
+       if(arr[i].length < longest.length){
+           max=arr[i];
+       }
+       return longest;
+   }
+   
+}
+
+
+function longestword (str){
+   if(str == undefined || str == null)
+      return null;
+   var w = str.split(" ");
+   var result = null;
+   let count = 0;
+   for(var i = 0; i < w.lenght; i++){
+      if(w[i].length > count){
+          count = w[i].lenght;
+          result = w[i];
+      }
+   }
+   return result;
+}
+let r =longestWord(["amani", "amatama","huku"]);
+console.log(r);
+
