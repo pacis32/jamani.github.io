@@ -7,7 +7,7 @@
  */
 
 
- function findLongestWord(arr){
+ /*function findLongestWord(arr){
    let longest=arr[0];
    for(let i=0; i<arr.length; i++){
 
@@ -37,3 +37,12 @@ function longestword (str){
 let r =longestWord(["amani", "amatama","huku"]);
 console.log(r);
 
+
+function countElement(arr){
+   let count=0;
+   for(let i=0; i<arr.length;i++){
+      count=count+arr[i];
+    console.log(arr[i]);
+   }
+   return count;
+}
