@@ -51,7 +51,11 @@ function findTitles() {
  * Event handler for Add book button.  Creates and adds book to the library
  */
 function addBook() {
-    const title = document.getElementById("title"); //retrieves the book title from the title textbox
+    const title = document.getElementById("title");
+     //retrieves the book title from the title textbox
+     const author = document.getElementById("title");
+     const libraryID = document.getElementById("title");
+
     console.log("title is: ", title.value);
     alert("title:  " + title.value);
 
@@ -60,7 +64,7 @@ function addBook() {
     const newBook={title: title,author:author,libraryID:libraryID};
     library.push(book);
 
-    return newBook;
+    return library;
 }
 
 /**
@@ -69,11 +73,11 @@ function addBook() {
  */
 function findAuthors() {
 //implement this
-const titles=[];
-for(const element of titles){
-    titles.push(element.author);
+const authors=[];
+for(const element of library){
+    authors.push(element.author);
 }
-titles.sort();
+authors.sort();
 return titles;
 
 }
@@ -84,9 +88,19 @@ return titles;
 */
 function findIDs() {
 //implement this
-const libraryIDs=[];
-for(const element of libraryIDs ){
-    libraryIDs.push(element.libraryID)
+const ids=[];
+for(const element of library ){
+    ids.push(element.libraryID)
+}
+ids.sort();
+ return ids;
 }
 
-}
+function addBook(title, author, libraryID){
+ 
+    let newBook = {title, author, libraryID };
+    
+    library.push(newBook);
+    
+   return newBook;
+ }
