@@ -1,4 +1,3 @@
-"use strict";
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 module.exports = { findTitles, findAuthors, findIDs }; //add all of your function names here that you need for the node mocha tests
 
@@ -41,6 +40,7 @@ function showTitles() {
 function findTitles() {
     let titles = [];
 
+
     titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
     // implement this and other functions
     return titles;
@@ -51,23 +51,12 @@ function findTitles() {
  * Event handler for Add book button.  Creates and adds book to the library
  */
 function addBook() {
-   // const title = document.getElementById("title");
-     //retrieves the book title from the title textbox
-     const author = document.getElementById("author");
-   
-
+    const title = document.getElementById("title"); //retrieves the book title from the title textbox
     console.log("title is: ", title.value);
     alert("title:  " + title.value);
 
-    console.log("author is: ", author.value);
-    alert("author:  " + author.value);
-
     const newID = library.length + 5000;  // hack to get a unique id for now
     //finish the implementation -- get the author, create a book object, and add to the library array
-    const newBook={title: title,author:author,libraryID:newID};
-    library.push(book);
-
-    return library;
 }
 
 /**
@@ -76,12 +65,8 @@ function addBook() {
  */
 function findAuthors() {
 //implement this
-const authors=[];
-for(const element of library){
-    authors.push(element.author);
-}
-authors.sort();
-return titles;
+//const authors = [];
+
 
 }
 
@@ -91,31 +76,4 @@ return titles;
 */
 function findIDs() {
 //implement this
-const ids=[];
-for(const element of library ){
-    ids.push(element.libraryID)
 }
-ids.sort();
- return ids;
-}
-
-
-
-
-
-/**
- * Event handler to display library authors sorted alphabetically
- * @returns {string} the sorted words;
- */
- function scramble() {
-
-
-    const titles = findTitles();
-
-    const titleString = titles.join(" ").toString().split(" ").sort((aaa,bbb) => (aaa.length > bbb.length)? 1 : -1).join("\n");
-
-    let textArea = document.getElementById("displayArea"); 
-    textArea.innerHTML = titleString;
-}
-
-
