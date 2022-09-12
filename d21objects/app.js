@@ -51,17 +51,20 @@ function findTitles() {
  * Event handler for Add book button.  Creates and adds book to the library
  */
 function addBook() {
-    const title = document.getElementById("title");
+   // const title = document.getElementById("title");
      //retrieves the book title from the title textbox
-     const author = document.getElementById("title");
-     const libraryID = document.getElementById("title");
+     const author = document.getElementById("author");
+   
 
     console.log("title is: ", title.value);
     alert("title:  " + title.value);
 
+    console.log("author is: ", author.value);
+    alert("author:  " + author.value);
+
     const newID = library.length + 5000;  // hack to get a unique id for now
     //finish the implementation -- get the author, create a book object, and add to the library array
-    const newBook={title: title,author:author,libraryID:libraryID};
+    const newBook={title: title,author:author,libraryID:newID};
     library.push(book);
 
     return library;
@@ -96,11 +99,23 @@ ids.sort();
  return ids;
 }
 
-function addBook(title, author, libraryID){
- 
-    let newBook = {title, author, libraryID };
-    
-    library.push(newBook);
-    
-   return newBook;
- }
+
+
+
+
+/**
+ * Event handler to display library authors sorted alphabetically
+ * @returns {string} the sorted words;
+ */
+ function scramble() {
+
+
+    const titles = findTitles();
+
+    const titleString = titles.join(" ").toString().split(" ").sort((aaa,bbb) => (aaa.length > bbb.length)? 1 : -1).join("\n");
+
+    let textArea = document.getElementById("displayArea"); 
+    textArea.innerHTML = titleString;
+}
+
+
