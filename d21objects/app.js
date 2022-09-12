@@ -41,7 +41,6 @@ function showTitles() {
 function findTitles() {
     let titles = [];
 
-
     titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
     // implement this and other functions
     return titles;
@@ -58,6 +57,10 @@ function addBook() {
 
     const newID = library.length + 5000;  // hack to get a unique id for now
     //finish the implementation -- get the author, create a book object, and add to the library array
+    const newBook={title: title,author:author,libraryID:libraryID};
+    library.push(book);
+
+    return newBook;
 }
 
 /**
@@ -66,7 +69,12 @@ function addBook() {
  */
 function findAuthors() {
 //implement this
-
+const titles=[];
+for(const element of titles){
+    titles.push(element.author);
+}
+titles.sort();
+return titles;
 
 }
 
@@ -76,4 +84,9 @@ function findAuthors() {
 */
 function findIDs() {
 //implement this
+const libraryIDs=[];
+for(const element of libraryIDs ){
+    libraryIDs.push(element.libraryID)
+}
+
 }
