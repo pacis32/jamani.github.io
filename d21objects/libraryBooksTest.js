@@ -5,6 +5,7 @@
  const findTitles = myExports.findTitles;  //do this for all of the functions used in the Mocha tests
  const findAuthors = myExports.findAuthors;
  const findIDs = myExports.findIDs;
+ const addBook=myExports.addBook;
  const createBook = myExports.createBook; */
 
 /* global assert findTitles findAuthors findIDs addBook */
