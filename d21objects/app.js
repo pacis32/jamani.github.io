@@ -1,5 +1,5 @@
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-module.exports = { findTitles, findAuthors, findIDs, createBook}; //add all of your function names here that you need for the node mocha tests
+//module.exports = { findTitles, findAuthors, findIDs, createBook}; //add all of your function names here that you need for the node mocha tests
 
 /*
 o	createBook, which will take title, author, and libraryID as inputs.  It will create a new book object and add it to the library, 
@@ -55,7 +55,7 @@ function createBook(title,author,libraryID) {
     console.log("title is: ", title.value);
     alert("title:  " + title.value);
 
-    const newID = library.length + 5000;  // hack to get a unique id for now
+    //const newID = library.length + 5000;  // hack to get a unique id for now
     //finish the implementation -- get the author, create a book object, and add to the library array
     let newBook = {title, author, libraryID };
     
