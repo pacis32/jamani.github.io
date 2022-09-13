@@ -7,8 +7,18 @@ module.exports = { Accumulator, Calculator }; //add all of your function names h
  * 
  * @returns {Accumulator} constructor function
  */
-function Accumulator(){
+function Accumulator(initialValue, increment){
 //implement this
+this.increment = increment,
+   this.currentValue = initialValue,
+
+   this.accumulate = function (){
+      this.currentValue = this.currentValue + this.increment;
+   }
+
+   this.report= function(){ 
+      return this.currentValue; 
+   }
 
 }
 
@@ -17,4 +27,15 @@ function Accumulator(){
  */
  function Calculator() {
     //implement this
+
+    this.setValues = function (a, b){
+        this.a =a;
+        this.b = b;
+     };
+     this.sum = function (){
+        return this.a + this.b;
+     };
+     this.mul = function (){
+        return this.a * this.b;
+     };
      }
