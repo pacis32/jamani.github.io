@@ -7,11 +7,11 @@ module.exports = { ucFirst, getMaxSubSum, truncate , camelize}; //add all of you
 
 
 function ucFirst(str) {
- 
+  return str.charAt(0).upercase();
   }
 
   function checkSpam(str) {
- 
+   
   }
 
 
