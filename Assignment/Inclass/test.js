@@ -47,5 +47,8 @@ function countElement(arr){
    return count;
 }
 */
-const a = {x: 5};
-a.x = 6;
+const arr = ["b","a", "C"];
+
+arr.sort();
+
+console.log(arr);
