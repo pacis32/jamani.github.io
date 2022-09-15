@@ -7,6 +7,8 @@ const getMaxSubSum = myExports.getMaxSubSum;  //do this for all of the functions
 const ucFirst = myExports.ucFirst; 
 const truncate = myExports.truncate; 
 const camelize = myExports.camelize; 
+const checkSpam= myExports.checkSpam;
+const extractCurrencyValue=myExports.extractCurrencyValue;
 
  
 /* eslint-disable quotes */
