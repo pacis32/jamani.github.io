@@ -8,6 +8,9 @@ const unique = myExports.unique;
 const filterRangeInPlace = myExports.filterRangeInPlace;
 const filterRange = myExports.filterRange;
 const Calculator = myExports.Calculator;
+const copySorted=myExports.copySorted;
+const sortByAge=myExports.sortByAge;
+const getAverageAge=myExports.getAverageAge;
 
 
     
@@ -115,3 +118,39 @@ describe("groupById", function() {
       assert.deepEqual(groupById(users), {});
     });
   });
+
+  describe("copySorted", function () {
+    it("creates a copy of array and sorts it", function () {
+        let arr = ["HTML", "JavaScript", "CSS"];
+        assert.deepEqual(copySorted(arr), ["CSS", "HTML", "JavaScript"]);
+    });
+
+    it("keeps the original array unchanged", function () {
+        let arr = ["HTML", "JavaScript", "CSS"];
+        let newArr = copySorted(arr);
+        assert.deepEqual(arr, ["HTML", "JavaScript", "CSS"]);
+    });
+});
+describe("sortByAge", function () {
+    it("return an array of objects sorted by age", function () {
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 28 };
+        let arr = [pete, john, mary];
+        assert.deepEqual(sortByAge(arr), [
+            { name: "Pete", age: 30 },
+            { name: "Mary", age: 28 },
+            { name: "John", age: 25 }
+        ]);
+    });
+});
+
+describe("getAverageAge", function () {
+    it("returns average age in the array's objects", function () {
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 29 };
+        let arr = [pete, john, mary];
+        assert.strictEqual(getAverageAge(arr), 28);
+    });
+});
