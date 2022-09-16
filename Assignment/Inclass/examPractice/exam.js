@@ -121,4 +121,126 @@ function foo(bat) {
     return product;
   }
 
-  
+  const numbers = [1, 5, 18, 2, 77, 108];
+
+console.log(numbers.filter(isEven));// 18,2,108
+console.log(numbers.find(isEven));//18
+console.log(numbers.findIndex(isEven));//2
+
+function isEven(number) {
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const obj1 = {a: 1, b: 2};
+const obj2 = {a: 1, b: 2};
+const obj3 = obj2; 
+
+console.log(obj1 === obj2);// false
+console.log(obj1 === obj3);//fase
+console.log(obj3 === obj2);//true
+console.log(obj1 == obj2);//false
+console.log(obj1 == obj3);//false
+console.log(obj2 == obj3);//true
+console.log(obj3.a === obj2.a);//true
+console.log(obj3.a === obj1.a);//true
+
+const reversed = "i am totality".split("").reverse().join("");
+console.log(reversed);
+
+////////////////////////
+function reverseAll(str){
+  const strArray = str.split("");
+  strArray.reverse();
+  return strArray.join("");
+ }
+ 
+ console.log(reverseAll("Hi how are you!"));
+
+ ///////////////////////
+ function isSumBalanced(arr) {
+  let sumE = 0;
+  let SumO = 0
+
+  if (arr.length === 0) {
+
+    return false
+
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+
+      sumE += arr[i];
+
+    } else if (arr[i] % 2 !== 0) {
+
+      sumO += arr[i];
+
+    } else if (sumE === sumO) {
+
+      return true;
+
+    } else {
+
+      return false;
+
+    }
+
+  }}
+
+  ///////////////
+
+  const arr1 = [1, 10];
+const arr2 = [1, 10];
+const arr3 = arr1;
+
+console.log(arr1 === arr2); //__False_____________
+console.log(arr2 === arr3);  //__False______________
+console.log(arr1 === arr3); //___True____________
+console.log(arr1 == arr2); //____false___________
+console.log(arr2 == arr3);  //__false______________
+console.log(arr1 == arr3); //___true____________
+console.log(arr2[1] == arr3[1]);  //__true_____________
+console.log(arr2[1] === arr3[1]); //__true_____________
+
+/////////////////////////
+
+/* write a function to return  sum of the first elements of the inner arrays */
+let arr = [[1, 2], [3, 4], [5, 6]]
+function sumFirst(arr){
+  let sum = 0;
+  for (const element of arr){
+   sum += element[0];
+  }
+  return sum;
+}
+
+console.log(sumFirst(arr));
+
+//**
+ // Question 5
+
+ /*function cat(abac){
+  if(!abc){
+    abc= console.log("abc"); // abc
+    return abc;
+  }
+  const xyz= console.log("xyz");// not reacheable
+  return xyz;
+ }
+ console.log(cat());//undefined 
+*/
+ // question 6
+
+ let nums="4123".split("");//4,1,2,3
+ nums.sort((x,y)=> x-y);
+ console.log(nums.join("."));
+
+
+ 
+
+
+
