@@ -1,7 +1,7 @@
 "use strict";
 /* global assert    */
 /* comment out the node specific code when going to the browser*/
-const assert = require("assert");  //always need this with node
+/*const assert = require("assert");  //always need this with node
 const myExports = require("./methods.js");  //with node need the name of your file with your functions here
 const groupById = myExports.groupById;  //do this for all of the functions used in the Mocha tests
 const unique = myExports.unique;
@@ -12,7 +12,7 @@ const copySorted=myExports.copySorted;
 const sortByAge=myExports.sortByAge;
 const getAverageAge=myExports.getAverageAge;
 
-
+*/
     
 
 /*
