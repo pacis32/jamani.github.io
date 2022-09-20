@@ -2,13 +2,13 @@
  /* global assert topSalary   */
 /* eslint-disable quotes   */  
 
-// comment out the node specific code when going to the browser
+/*comment out the node specific code when going to the browser
 const assert = require("assert");
 const myExports = require("./destructure.js");
 const topSalary = myExports.topSalary;  //do this for all of the functions used in the Mocha tests
 const assignment= myExports.assignment;
 const cloneObject= myExports.cloneObject;
- 
+ */
     
 /* 
 Create the function topSalary(salaries) that returns the name of the top-paid person.
