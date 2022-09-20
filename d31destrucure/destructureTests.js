@@ -36,8 +36,8 @@ describe("topSalary", function () {
 describe("destructuring assignment", function () {
   it("returns destructured object into variables", function () {
     let user = {
-      name: "Tembo",
-      years: 38
+      name: "John",
+      years: 30
     };
     assert.equal(assignment(user), "John+30+false");
   });
