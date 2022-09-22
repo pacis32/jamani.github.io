@@ -30,6 +30,7 @@ function findMin(...numbers) {
 }
 
 
+
 function combineObjs(obj1, obj2){
  return {...obj1,...obj2};
 
