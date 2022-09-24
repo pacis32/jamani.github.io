@@ -46,7 +46,7 @@ for(let element of arr){
 function myReduce(arr, func, initialValue) {
     //IMPLEMENTATION NEEDED
     let value = initialValue;
-    for(element of arr){
+    for(let element of arr){
         value = func(value,element);
     }
     return value;
