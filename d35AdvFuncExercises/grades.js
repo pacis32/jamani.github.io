@@ -68,4 +68,4 @@ return sum/this.students.length;
 
 
 /* comment out when running in browser */
-module.exports = {quiz};
+//module.exports = {quiz};
