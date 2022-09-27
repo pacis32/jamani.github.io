@@ -12,14 +12,76 @@ const SavingsAccount = sav.SavingsAccount;
 
 
 
-class Bank{}
+class Bank{
+static nextNumber = 1;
+constructor(){
+   this._accounts=[];
+   
+}
+
+addAccount(){
+    let accNum= Bank.nextNumber;
+    let newAccount= new Account(accNum);
+    this._accounts.push(newAccount);
+    Bank.nextNumber++;
+
+    return accNum;
+}
+
+addSavingsAccount(interest) {
+    let accNum = Bank.nextNumber;
+    let newSavings = new SavingsAccount(accNum, interest);
+    this._accounts.push(newSavings);
+    Bank.nextNumber++;
+    return accNum;
+    
+}
+
+addCheckingAccount(overdraft) {
+    let accNum = Bank.nextNumber;
+    let newChecking = new CheckingAccount(accNum, overdraft);
+    this._accounts.push(newChecking);
+    Bank.nextNumber++;
+    return accNum;
+}
+
+    closeAccount(number) {
+        const remAccount = this._accounts.find(account => account.getNumber() === number)
+        const accountIndex = this._accounts.indexOf(remAccount);
+        this._accounts.splice(accountIndex, 1);
+        return `Account ${number} has been closed`
+    }
+
+    accountReport() {
+        let report = "";
+        for (let i = 0; i < this._accounts.length; i++) {
+            report += this._accounts[i].toString() + "\n"
+            // if ("_overdraft" in this._accounts[i]) {
+            //     report = report + `CheckingAccount ${this._accounts[i].getNumber()}: balance: ${this._accounts[i].getBalance()} overdraft limit: ${this._accounts[i].getOverdraft()}\n`
+            // } else if ("_interest" in this._accounts[i]) {
+            //     report = report + `SavingsAccount ${this._accounts[i].getNumber()}: balance: ${this._accounts[i].getBalance()} interest: ${this._accounts[i].getInterest()}\n`
+            // }
+        }
+        return report;
+    }
+        endOfMonth() {
+            let monthlyReport = "";
+            for (let i = 0; i < this._accounts.length; i++) {
+                if (i == this._accounts.length - 1) {
+                    monthlyReport += `${this._accounts[i].endOfMonth()}`
+                } else {
+                    monthlyReport += `${this._accounts[i].endOfMonth()}\n`
+                }
+            }
+            return monthlyReport;
+        }
+
+    }
 
 
 
 
-
-
-
+//`SavingsAccount ${this._accounts[0].getNumber()}: balance: ${this._accounts[0].getBalance()} interest: ${this._accounts[0].getInterest()}\nCheckingAccount ${this._accounts[1].getNumber()}: balance: ${this._accounts[1].getBalance()} overdraft limit: ${this._accounts[1].getOverdraft()}\n`
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
 exports.Bank = Bank;
