@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 /* eslint-disable require-jsdoc */
 //"use strict";
 //question01
@@ -38,6 +39,27 @@ scotland();
 // aberdeen
 
 //c) rewrite one line of the scotland code to fix the "this" problem by using bind
-let innFn= aberdeen.expression.bind(aberdeen);
+// let innFn= aberdeen.expression.bind(aberdeen);
 
-let innerFn= function (){aberdeen.expression.call(aberdeen)};
+// let innerFn= function (){aberdeen.expression.call(aberdeen)};
+
+
+//**
+ 
+class User {
+    constructor(name = "Anonymous") {
+        this.name = name;
+    }
+    sayHi() {
+        console.log(`Hello, ${this.name}!`);
+    }
+}
+fred = new User();
+console.log(fred);
+console.log(fred.__proto__);
+console.log(User.prototype);
+fred.sayHi();
+bob = new User("Bob");
+console.log(bob);
+bob.sayHi();
+ 
