@@ -151,35 +151,35 @@
 // console.log(increment.increment(10));
 // console.log(increment.decrement(10))
 
-function a() {
-    console.log("this in function a: ", this); // undefined strict/ global not strict
-  }
+// function a() {
+//     console.log("this in function a: ", this); // undefined strict/ global not strict
+//   }
   
-  const b = {
-    dog: 'fido',
-    log: function () {
-      console.log("this in method/function log: ", this); //object { dog: 'fido', log: [Function: log] } to all
-    }
-  }
+  // const b = {
+  //   dog: 'fido',
+  //   log: function () {
+  //     console.log("this in method/function log: ", this); //object { dog: 'fido', log: [Function: log] } to all
+  //   }
+  // }
   
-  console.log("this in console.log: ", this); // {} all
-  a();
-  b.log();
-  let mylog = b.log;
-  mylog(); // undefined strict mode / global no strict
+  // console.log("this in console.log: ", this); // {} all
+  // a();
+  // b.log();
+  // let mylog = b.log;
+  // mylog(); // undefined strict mode / global no strict
 
-  let john = {
-    name: "John",
-    surname: "Smith",
-    age: 10
-  };
-  let pete = {
-    name: "Pete",
-    surname: "Hunt",
-    age: 20
-  };
+  // let john = {
+  //   name: "John",
+  //   surname: "Smith",
+  //   age: 10
+  // };
+  // let pete = {
+  //   name: "Pete",
+  //   surname: "Hunt",
+  //   age: 20
+  // };
   
-  let users = [john, pete];
+  // let users = [john, pete];
   
   /* Use the filter function to filter the users array for all users
    older than age 10 
@@ -189,11 +189,98 @@ function a() {
   */
   //Hint: recall bracket versus dot notation
   
-  let usersMapped = users.filter(user => (
-    user.age > 10 ));
-  //OR
-  //debugger;
-  const mapped = users.filter(function(user) {
-    return user.age > 10; });
-  console.log(usersMapped);
-  console.log(mapped);
+  // let usersMapped = users.filter(user => (
+  //   user.age > 10 ));
+  // //OR
+  // //debugger;
+  // const mapped = users.filter(function(user) {
+  //   return user.age > 10; });
+  // console.log(usersMapped);
+  // console.log(mapped);
+
+//   function findTrasactionsByAmount(bank){
+//     let outputArr = [];
+//     for(let customer of bank.transactionsDB){
+//         let amountGreaterThan20 = customer.customerTransactions.find(amount => amount > 20);
+//         if(amountGreaterThan20 != null){
+//             outputArr.push({custId: customer.customerId, amount: amountGreaterThan20});
+//         }
+//     }
+//     return outputArr;
+// }
+
+const bank = { transactionsDB: [], };
+
+bank.transactionsDB = [
+
+    { customerId: 1, customerTransactions: [10, 50, -40] },
+
+    { customerId: 2, customerTransactions: [10, 10, -10] },
+
+    { customerId: 3, customerTransactions: [25, -5, 55] }];
+
+//return array with all customers who had deposits greater than 20. 
+
+//array should contain objects with customerId and the transaction amount for each such transaction
+
+// function findTransactionsByAmount(bank) {
+
+//     const foundDepositsArray = [];
+
+//     for (const customerObj of bank.transactionsDB) {
+
+//         //now loop through this customers transactions and save any that are > 20
+
+//         for (const transAmount of customerObj.customerTransactions) {
+
+//             if (transAmount > 20) {
+
+//                 foundDepositsArray.push({ custId: customerObj.customerId, amount: transAmount });
+//             }
+//         }
+//     }
+
+//     return foundDepositsArray;
+// }
+
+
+// console.log("expect [{custId: 1, amount: 50}, {custId: 3, amount: 25}, {custId: 3, amount 55}] : ",
+
+//     findTransactionsByAmount(bank));
+
+// const me = {
+//   first: 'Tina',
+//   last: 'Xing',
+//   getFullName: function() {
+//       console.log('this is: ', this);
+//     console.log( this.first + ' ' + this.last);
+//   }
+// }
+
+// me.getFullName();
+// console.log("me is: ", me);
+// console.log("me.getFullName is: ", me.getFullName);
+// setTimeout(me.getFullName.bind(me), 1000);
+
+// function area(){
+//   console.log(this);   //  _____________________________console.log(this.side) ______________________________________
+//   return this.side * this.side;
+//   }
+//   const square1 = {side: 5,  area: area};
+//   console.log(area.bind(square1)()); 
+
+function Period(hours, minutes) {
+  this.hours = hours;
+  this.minutes = minutes;
+  // this.format = () => {
+  //     console.log(this); // => true
+  //     return this.hours + ' hours and ' + this.minutes + ' minutes';
+  // }
+}
+
+    Period.prototype.format = function() {
+      console.log(this ); // => true
+      return this.hours + ' hours and ' + this.minutes + ' minutes';
+    };
+  const walkPeriod = new Period(2, 30);
+  console.log(walkPeriod.format())
