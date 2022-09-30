@@ -97,4 +97,4 @@ addCheckingAccount(overdraft) {
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-exports.Bank = Bank;
+//exports.Bank = Bank;

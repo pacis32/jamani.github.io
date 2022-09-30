@@ -3,7 +3,7 @@
 
 /* You need the assert and function name declarations to test in node.  
 Comment these out when you send it to the browser with the index.html mocha setup page.   */
-
+/*
 const assert = require("assert");  //always need this with node
 
 const acc = require("./account.js");//with node need the name of your file with your functions here
@@ -14,7 +14,7 @@ const chk = require("./checkingaccount.js");
 const CheckingAccount = chk.CheckingAccount;
 const sav = require("./savingsaccount.js");
 const SavingsAccount = sav.SavingsAccount;  
-
+*/
 describe("Account class", () => {
     let account = undefined;
     describe("constructor(number)", () => {
