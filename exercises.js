@@ -269,18 +269,17 @@ bank.transactionsDB = [
 //   const square1 = {side: 5,  area: area};
 //   console.log(area.bind(square1)()); 
 
-function Period(hours, minutes) {
-  this.hours = hours;
-  this.minutes = minutes;
-  // this.format = () => {
-  //     console.log(this); // => true
-  //     return this.hours + ' hours and ' + this.minutes + ' minutes';
-  // }
-}
+// 
 
-    Period.prototype.format = function() {
-      console.log(this ); // => true
-      return this.hours + ' hours and ' + this.minutes + ' minutes';
-    };
-  const walkPeriod = new Period(2, 30);
-  console.log(walkPeriod.format())
+const abc = {
+  a: 1,
+  b: 2,
+  add: function() {
+    console.log("1+2 = 3?", this.a + this.b);
+  }
+}
+console.log("regular call to add: ");
+abc.add();
+/* use add inside a timeout */
+console.log("wait 2 seconds to call: ");
+setTimeout(abc.add, 2000);
