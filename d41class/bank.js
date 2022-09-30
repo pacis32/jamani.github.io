@@ -2,14 +2,14 @@
 /* global exports require Account   SavingsAccount CheckingAccount */
 
 /* exports at end of file since exporting an object, which can only be referenced after definition   */
-    
+ /*   
 const acc = require("./account.js");//with node need the name of your file with your functions here
 const Account = acc.Account;  //do this for all of the functions used in the Mocha tests
 const chk = require("./checkingaccount.js");
 const CheckingAccount = chk.CheckingAccount;
 const sav = require("./savingsaccount.js");
 const SavingsAccount = sav.SavingsAccount; 
-
+*/
 
 
 class Bank{
@@ -84,7 +84,7 @@ addCheckingAccount(overdraft) {
 //`SavingsAccount ${this._accounts[0].getNumber()}: balance: ${this._accounts[0].getBalance()} interest: ${this._accounts[0].getInterest()}\nCheckingAccount ${this._accounts[1].getNumber()}: balance: ${this._accounts[1].getBalance()} overdraft limit: ${this._accounts[1].getOverdraft()}\n`
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-exports.Bank = Bank;
+//exports.Bank = Bank;
 
 
 
