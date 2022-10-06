@@ -1,0 +1,55 @@
+
+.top-banner{
+    border: 1px solid green;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    border: 25px ;
+    width: 100%;
+    background-color:  #7eccfc;
+    
+      
+}
+.btn{
+    position:static;
+     background-color:green;
+     margin-right: 15px;
+     width: 50px;
+     height: 20px ;
+     margin-top: 19px;
+    
+    
+     border-radius: 15px; 
+     color: whitesmoke;
+         
+
+    
+     
+}
+.img{
+    width: 50px
+}
+
+
+.site-contents{
+    display: flex ; 
+    justify-content: space-between;
+    margin: 5px;
+    border: red;
+}
+
+.banner{
+    border: 100px; 
+    background-color: #5fb0e2; 
+    width: 100px ;
+    height: 30px ; 
+    margin-top: 5px; 
+    margin-bottom: 5px;
+}
+ ul{
+    border: red;
+    width: 50px;
+    height: 80px;
+}
