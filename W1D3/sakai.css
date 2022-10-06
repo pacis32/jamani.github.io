@@ -1,6 +1,6 @@
 
 .top-banner{
-    border: 1px solid green;
+    border: 3px solid green;
 }
 
 .navbar{
@@ -35,7 +35,7 @@
 
 .site-contents{
     display: flex ; 
-    justify-content: space-between;
+    justify-content:space-around;
     margin: 5px;
     border: red;
 }
