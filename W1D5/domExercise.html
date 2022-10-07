@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function domDisplay(){
+            // change Textof div,P,textInput,Link
+
+            let myText=document.getElementById("myDIV");
+            myDIV.innerHTML='new Text';
+
+            //create a new p
+            let p= document.create("p");
+            p.innerHTML="paragraph";
+            document.getElementById("myDIV").append("p");
+
+            // change p;
+         
+      
+
+
+
+           
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <img  style =" height: 50px;"id='myImage' src="/CS315/W1D1/InClass/images/youtube-logo-png-2069.png" />
+        <div id="myDIV">MyText
+           <p id="newp">hello</p>
+        </div>
+        <label>UserName</label>
+        <input type="text" id='userName' myAttr='myAttrValue' />
+        <br />
+        <!-- <label>Copy</label>
+        <input type="text" id="copy" /> -->
+        <input type="button" onclick="domDisplay()" value="Submit" />
+    
+        <!-- <textarea ></textarea>
+        <input type="checkbox"/>
+        <input type="radio"/> -->
+    
+    </body>
+</body>
+</html>
+
+<!-- 1. Change Text of Div,P,textInput,link 
+2. Change the image,
+3. change the address of link
+3. Change the value of textInput,textArea
+4. Create and add Div,p,img,link, textInput,textArea,button,checkbox,radio 
+5. -->
