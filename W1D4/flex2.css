@@ -1,0 +1,26 @@
+.col-out{
+    max-width: 1300px;
+    background-color: #fff;
+    margin: 40px auto 0 auto;
+    padding: 20px 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    gap: 10px ;
+   
+}
+
+.main-column{
+    flex: 1;
+}
+
+.sidebar-one{
+    flex: 1;;
+}
+
+.sidebar-two{
+    flex: 1;
+}
+
+h3{
+    
+}
