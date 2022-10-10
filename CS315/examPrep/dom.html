@@ -1,18 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 <body>
-    <div id="myDiv">
-        <p id="myP"></p>
-    </div>
+<h1>The Element Object</h1>
+<h2>The innerHTML Property</h2>
 
-    <script>
-        document.getElementByID("myDiv").innerHTMl="secDiv";
-    </script>
+<p id="myP">This is a p element.</p>
+<div id="myDiv">This is a div element.</div>
+<p><a id="myAnchor"href="https://www.google.com" target="">google's web</a></p>
+<img id="myPic" style="width: 80px;"src="/CS315/W1D6/exam/images/pic.jpg" alt="">
+<img  id="secPic"style="width: 80px;"src="" alt="">
+<button onclick="change()">change</button>
+<p id="demo"></p>
+ 
+
+
+<!-- // let res="hello there";
+// let sol="amakuru";
+// document.getElementById("myP").innerHTML=res;
+// document.getElementById("myDiv").innerHTML=sol; -->
+
+<script>
+function change() {
+//   let ele=document.getElementById("myAnchor");
+//   ele.innerHTML="miu";
+//   ele.href="https://miu.edu";
+// let im =document.getElementById("secPic");
+// im.setAttribute("src","/Users/macbook/Documents/GitHub/jamani.github.io/W1D3/images/MIU.png");
+
+
+
+
+// let x=document.createElement("INPUT");
+// x.setAttribute("type","text");
+// x.setAttribute("value","hello");
+// document.body.append(x);
+
+let im= document.createElement("img");
+im.src="https://www.planetware.com/photos-large/USNY/usa-best-places-new-york.jpg";
+document.querySelector("#myDiv").append(im);
+}
+</script>
+
+</script>
+
 </body>
 </html>
