@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="">
+    <div style="margin-bottom: 5px ;">
+        <label for="user-pwd">Input:</label>
+       <input type="input" name="user-input" id="userInput">
+
+     </div>
+    <div>
+        <label for="output">Outup:</label>
+        <textarea rows="3" cols="30" name="address" id="output"></textarea>
+        <div style="margin-left: 50px;">
+        <input type="button" onclick="display()" value="Submit" />  
+         </div>
+    </div>
+</form>
+<form style="margin-top:30px">
+    <div >
+        <label style="margin-right: 33px;"> First value</label>
+        <input type="number" name="input-val" id="first">
+    </div>
+    <div style="margin-top: 15px;"">
+        <label style="margin-right: 16px;" > Second value</label>
+        <input type="number" name="input-val" id="second">
+    </div>
+    <div>
+        <div  style="margin-top:10px">
+            <div>
+                operations
+            </div>
+           
+            <button type="button" onclick="add()">+</button>
+            <button type="button" onclick="sub()">-</button>
+            <button type="button" onclick="mult()"> *</button>
+        </div>
+        <div style="margin-top:10px">Result</div>
+        
+        <label style="margin-top: 30px" name="" id=" result" cols="5" ></label>
+    </div>
+</form>
+
+    <script>
+        function display(){
+            let result=document.getElementById("userInput");
+            let res= result.value;
+            let out=document.getElementById("output");
+            out.value=res;
+
+
+            
+
+            
+        }
+
+        function add(){
+
+            let fInput=document.getElementById("first");
+            let fValue=fInput.value;
+            console.log(fValue)
+            let sInput=document.getElementById("second");
+            let sValue=sInput.value;
+            console.log(sValue);
+            let sum=document.getElementById("result")
+                
+            console.log(value=fValue+sValue);
+
+
+            }
+
+            function sub(){
+                let fInput=document.getElementById("first");
+            let fValue=fInput.value;
+            console.log(fValue)
+            let sInput=document.getElementById("second");
+            let sValue=sInput.value;
+            console.log(sValue);
+            let sum=document.getElementById("result")
+                
+            console.log(value=fValue-sValue);
+            }
+
+            function mult(){
+                let fInput=document.getElementById("first");
+            let fValue=fInput.value;
+            console.log(fValue)
+            let sInput=document.getElementById("second");
+            let sValue=sInput.value;
+            console.log(sValue);
+            let sum=document.getElementById("result")
+                
+            console.log(value=fValue *sValue);
+            }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+    <div>
+        <label for="fistName">FirstName</label>
+        <input type="text" name="fName" id="fName">
+        <input type="text" name="lName" id="lName">
+        <input type="button" value="submit" onclick="display()">
+        <input type="button" value="replace" onclick="replace()">
+        <br>
+        <textarea name="outp" id="output" cols="30" rows="10"></textarea>
+
+        <script>
+            function display(){
+                let res= document.getElementById("fName");
+            
+                let copy= document.getElementById("lName");
+               
+
+                // replace
+            }
+
+            function replace(){
+             let res=  document.getElementById("fname");
+             let changed= document.getElementById("lName");
+               changed.value=res.value;
+               
+            }
+        </script>
+    </div>
+    </body>
+</html>

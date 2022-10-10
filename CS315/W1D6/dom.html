@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+   <p id="myP"></p>
+   <!-- <!-- <textarea id="myTextArea" value=" myTextArea"> </textarea>
+   <input type="button" onclick="display()" value="submit"> -->
+   <form action=""> 
+    <label for="FirstName"> FirstName:</label>
+    <input type="text" name="fName" id="fName" value=" ">
+    <br>
+    <label for="LastName">LastName:</label>
+    <input type="text" name="lName" id="lName" value=" ">
+    <br>
+    <button type="submit" onclick="chane()">Submit</button>
+
+   </form>
+    
+   <script>
+    // function display(){
+    //     let res= document.getElementById("myTextArea");
+    //      let initial =document.getElementById("myP");
+    //      document.getElementById("myP").innerHTML=initial+myTextArea;
+       
+         
+    // }
+    //  document.getElementById("myP").innerHTML="changed";
+    //  document.getElementById("myP").innerHTML += " "+"amaata";
+    //  let anchor= document.createElement("a");
+    //  document.getElementById("myP").append(anchor);
+     function chane(){
+        let firstname= document.getElementsByName("fName");
+        let lastName= document.getElementsByName("lName");
+        // if(lastname && lastname.length>0){
+        //     lastname=lastname[0];
+        console.log(firstname[0].value +" "+lastname[0].value);
+        // changing the color of firstname
+
+        document.getElementbyTagName("label")[0].style.color= "red";
+        }
+        
+     
+
+
+   </script>
+    </body>
+</html>
