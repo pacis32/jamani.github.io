@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Favorite color</p>
+
+    <label for=""> Yellow</label>
+    <input type="checkbox" name="color" id="checkIN" value="Yellow">
+    <label for=""> Blue</label>
+    <input type="checkbox" name="color" id="checkIN" value= "blue">
+    <label for=""> black</label>
+    <input type="checkbox" name="color" id="checkIN" color=" green">
+    <label for="">Green</label>
+    
+    <button id="btn">checked</button>
+
+    <label for="output" id="out"></label>
+
+     <script>
+      let out=document.document.querySelector("#out")
+      let btn= document.querySelector("#btn");
+      btn.addEventListener('click', ()=>{
+        let checkboxes= document.querySelectorAll('input[name:"color"]');
+        let selected=[];
+        for(let checkBox of checkBoxes){
+            selected.push(checkBox.value)
+        }
+        
+      out.innerHTML= values ? `you selected ${values}` :`you haven't selected any yet!`;
+    });
+   
+     </script>
+
+</body>
+</html>

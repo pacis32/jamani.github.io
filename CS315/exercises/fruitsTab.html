@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myTable {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+       tr:nth-child(even){background-color: #f2f2f2;}
+        
+       tr:hover {background-color: #ddd;}
+        
+       th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+      </style>
+</head>
+<body>
+ 
+    <table id="#myTable">
+        <tr>
+          <th>Name</th>
+          <th>Color</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>Red</td>
+        </tr>
+        <tr>
+            <td>Avocado</td>
+            <td>Dark Green</td>
+        </tr>
+    </table>
+    <input type="text" name="" id="inputColor">
+    <button onclick="change()">Submit</button>
+    <script>
+
+let row= document.getElementById("#myTable").innerHTML += " <tr id='addedRow'><td>Banana</td><td>Yellow</td> </tr>";
+
+
+       function change(){
+    let target =document.getElementById("addedRow");
+    let el=document.getElementById("inputColor").value;
+    target.setAttribute("style","color:"+el+"");
+
+   // col.setAttribute("style","color:"+colorText+";");
+        
+        
+        }
+        
+        
+       
+        
+           
+
+    </script>
+</body>
+
+</html>

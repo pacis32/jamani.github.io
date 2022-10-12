@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="MyDiv">
+<label for="" id="myGender" > Gender</label>
+<label for=""> name</label>
+<input type="radio" name="gr" id="" value="male">
+<label for="male">male</label>
+<input type="radio" name="gr" id="" value="female">
+<label for=" female" value ="female"> female</label>
+<button onclick="choose()">Submit</button>
+
+<p id="output"></p>
+</div>
+
+<script>
+    function choose(){
+        let genders=document.querySelectorAll("input[name='gr']");
+        let selectedGender;
+        
+        for( let gender of genders){
+            if(gender.checked){
+                selectedGender = gender.value;
+                
+                break;
+            }
+           
+        }
+        output.innerHTML= selectedGender ?`you checked ${selectedGender}` :`you haven't seletected any gender` ;
+    }
+</script>
+
+</body>
+</html>
