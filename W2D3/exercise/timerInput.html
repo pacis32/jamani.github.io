@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=onloadHandler;
+        function onloadHandler(){
+            let button=document.getElementById("time");
+            button.onclick=setTimer;
+            
+        }
+
+        function setTimer(){
+            let input=document.getElementById('time');
+            let time=parseInt(input.value);
+
+            function toggleDisplay(){
+                //console.log(" 1st timeout")
+                let banner= document.querySelector('div')
+                banner.style.display='none';
+            }
+
+            setTimeout( function(){
+               // console.log("2nd timeout")
+                let banner= document.querySelector('div')
+                banner.style.display='block';
+            },2000);
+
+
+
+        setTimeout(toggleDisplay, time*1000)
+        }
+
+    </script>
+</head>
+<body>
+    <div style="background-color:yellow;">
+        Test
+    </div>
+    <p> My Text</p>
+    <input type="text" id='time'/>
+    <button>Set Timer</button>
+</body>
+</html>

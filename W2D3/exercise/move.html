@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=onloadHandler;
+    function onloadHandler(){
+
+    let button=document.querySelector("button");
+    button.onclick=move;
+
+    function move(){
+        let source= document.querySelectorAll("#srcSelect option");
+        let dest=document.querySelector("#destSelect");
+
+        for(let option of source){
+            if(option.selected)
+            dest.append(option);
+        }
+
+    }
+       
+      
+    }
+</script>
+<body>
+    <div class="selectBoxDIV">
+        <div>
+            <select name="" id="srcSelect" multiple style="width:100%;">
+                <option value="rose">Rose</option>
+                <option value="rose">Chrysanthumum</option>
+                <option value="rose">Tulip</option>
+                <option value="rose">Hibiscus</option>
+            </select>
+        </div>
+        <div style="justify-self:center;align-self:center;">
+            <button >Move</button>
+        </div>
+        <div>
+            <select name="" id="destSelect" multiple style="width:100%">
+            </select>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+window.onload = pageLoad; 
+function pageLoad() {
+document.getElementById("ok").onclick = setTimeout;
+// document.getElementById("ch").onclick = setInterval;
+
+}
+//
+
+setTimeout(okayClick,2000) 
+function okayClick() {
+    setTimeout(function (){
+        //document.getElementById("bnr").style.display="none";
+        document.getElementById("br").style.fontSize="16";
+
+    },200)
+   
+   
+    }
+    setTimeout(()=>{
+        // document.getElementById("bnr").style.display="block";
+        document.getElementById("bnr").style.fontSize=20;
+    },4000);
+  
+
+
+    
+</script>
+
+</head>div
+<body>
+    <div>
+     <p id="bnr" style="border:2px; background-color: yellow;">Banner</p>
+    <button id="ok">OK</button>  
+    <button id="ch">change</button>   
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .headerTable tr.even {
+    font-weight : bold;
+    font-size : 9pt;
+    font-family : Arial,Helvetica,sans-serif,Verdana,Geneva;
+    background-color: #FFFFFF;
+    height: 20px;
+    color: #000000;
+}
+    </style>
+</head>
+<body>
+    <tr class="even">
+        <td>something1</td>
+        <td colspan="1">somthing1.1</td>
+    </tr>
+    
+    
+    <tr class="odd">
+        <td>something2</td>
+        <td><b>something2.1</b></td>
+    </tr>
+    
+    <tr class="even">
+        <td>something3</td>
+        <td><b>something3.1</b></td>
+    </tr>
+    <script>
+    var rows = document.getElementById('mytable').getElementsByTagName('tr');
+    for(var x = 0; x < rows.length; x++) {
+    rows[x].className = (x % 2 == 0) ? 'even' : 'odd';
+}
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onlaod=
+        function (){
+            let addB= document.querySelector("button");
+            
+            let removeB=documet.querySelector("button")
+            addB.onclick=addRow;
+            removeB.onclick=removeRow;
+        }
+
+            function addRow(){
+                console.log("hello")
+                let ul= document.querySelector("ul");
+                console.log(ul)
+                let li= document.createElement("li");
+                li.innerHTML='two';
+
+                ul.appendChild(li);
+            }
+        
+    </script>
+</head>
+<body>
+    <ul>
+        <li>One</li>
+    </ul>
+    <div>
+        <button>Add Row</button>
+        <button>Remove Rown</button>
+    </div>
+    <div>
+        <form>
+            <input type="checkbox" />Fruits
+            <input type="checkbox" />Snacks
+            <input type="radio" name="cc" value="Food" />Food
+            <input type="radio" name="cc" value="drinks" />drinks
+            <input type="text" value="" placeholder="Your favorite City" />
+            <textarea rows="10">
+write a short essay:
+            </textarea><br><br>
+            <select name="menu" >
+                <option value="" disabled selected>What would you like to eat</option>
+                <option>Potatoes</option>
+                <option>Rice</option>
+                <option>Steak</option>
+            </select>
+        </form>
+    </div>
+    <div>
+        <a href="http://google.com/" style="color:red">Click Me</a>
+    </div>
+    <table>
+        <tr>
+            <th>Yep</th>
+            <th>Yean</th>
+            <th>No</th>
+        </tr>
+        <tr>
+            <td>ahaaha</td>
+            <td>fndkl</td>
+            <td>fdlvlvlsfj</td>
+        </tr>
+    </table>
+</body>
+</html>

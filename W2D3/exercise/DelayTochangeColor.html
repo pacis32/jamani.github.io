@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        .special{
+            background-color: greenyellow;
+            color: white;
+        }
+    </style> -->
+    <script>
+     window.onload= onloadHandler;
+    function onloadHandler( ){
+        let button=document.getElementById("copyButton")
+        button.onclick=changeBackground;
+
+        function changeBackground(evt){
+            //evt.target.classList.add("special");
+            document.getElementById("copyButton").style.backgroundColor="green"
+            setTimeout(function(){
+                //evt.target.classList.remove("special");
+                document.getElementById("copyButton").style.backgroundColor="white"
+            },3000)
+          
+        }
+    }
+    </script>
+    
+
+    
+</head>
+<body>
+    <button id="copyButton">Copy</button>
+</body>
+</html>

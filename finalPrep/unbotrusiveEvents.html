@@ -1,0 +1,90 @@
+<html>
+<head>
+    <style>
+        .textDecorate {
+            text-decoration: underline
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Add</button>
+    <label>Heading</label>
+    <!-- 4 Set margin top 30px and margin bottom 10px to the following element(CSS) -->
+    <p style="margin-top:30px; margin-bottom:10px">Set Margin to Me</p>
+    <p id="myPara"> TEXT </p>
+    <p> Top </p>
+    <div>
+        <p> Second</p>
+        <p>Third</p>
+    </div>
+    First: <input type="text" value="dfd" id="first" />
+    Second:<input type="text" value="dfdsfs" id="second" />
+    <label></label>
+    <ol id="myOLOne">
+        <li>pass</li>
+        <li>fail</li>
+    <ol>
+    <script>
+        //1. Attach click event to button in unobtrusive way
+        document.getElementById("myButton").onclick = function () {
+            alert("clicked");
+        }
+        // 2. Add the following style to the label in unobtrusive way (javascript)
+        document.getElementsByTagName("label")[0].setAttribute("class", "textDecorate");
+
+        //3 Hide the below paragraph after 30 seconds. (javascript)
+        // Should be hidden after few seconds</p>
+        setTimeout(function () {
+            document.getElementById("myPara").style.display = "none";
+        }, 5 * 1000);
+        //5 Find all p elements that are children of div (javascript)
+        // <p> Top </p>
+        // <div> 
+        // <p> Second</p>
+        // <p>Third</p>
+        // </div>
+        let nodes = document.querySelectorAll("div > p");
+        // for(let eachNode of nodes){
+        //     alert(eachNode.innerHTML)
+        // }
+        //6 Write javascript code to show the value of both First and Second fields in the label element.
+        // First: <input type="text" value ="" id="first"/>
+        // Second:<input type ="text" value ="" id ="second"/>
+        // <label></label>
+        let label = document.getElementsByTagName("label")[1];
+        label.innerHTML = document.getElementById("first").value +
+            document.getElementById("second").value
+        //7. Write Javascript code to create the following element
+        //<ol id ="ol" class ="firstClass">
+        // <li>One</li>
+        // <li>Two</li>
+        // </ol>
+        let ol = document.createElement("ol");
+        ol.id = "ol";
+        ol.setAttribute("class", "firstClass");
+        let li = document.createElement("li");
+        li.innerHTML = "One";
+        ol.append(li);
+        let li2 = document.createElement("li");
+        li2.innerHTML = "Two";
+        ol.append(li2);
+        document.body.append(ol)
+
+        //8. <body>
+        //     <ol >
+        //     <li>pass</li>
+        //     <li>fail</li>
+        //     <ol>
+        //     <script>
+        //     let ol = document.getElementsByTagName("ol")[0];
+        //     ol.before("Heading");
+        //     </body>
+        // What is the output html after this runs?
+        let myOLOne = document.getElementById("myOLOne");
+        myOLOne.prepend("<li>Heading</li>");
+// let div = document.getElementsByTagName("div")[0];
+// alert(div.innerHTML);
+    </script>
+</body>
+
+</html>

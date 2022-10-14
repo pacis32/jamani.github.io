@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload=add;
+        function add(){
+            let header= document.querySelector("header")[0];
+            header.style.color="blue";
+            setTimeout(()=>{
+                header.setAttribute("class","class2")
+            },2000);
+        }
+    </script>
+</head>
+<body>
+    <label >Hi</label>
+    <p>First  Para</p>
+    <p>second  Para</p>
+    <button>Add</button>
+    <label class="myClass"> My label</label>
+    <header class="myClass">Header</header>
+
+</body>
+</html>

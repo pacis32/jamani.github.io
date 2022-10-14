@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        window.onload= ()=>{
+
+            let result=document.querySelectorAll("ul").children;
+              for(let fruit of fruits){
+                if(fruit.innerHTML="pear")
+                result.remove();
+                // All id to the element
+                result.setAttribute('id','pearId');
+                result.setAttribute('value','pearValue');
+                //add a row
+                pear=ele;
+
+              }
+              let newRow=document.createElement('li');
+              pear.before(newRow);
+              newRow.outerHTML='<li>Mango</li>';
+        }
+    </script>
+    </head>
+    <body>
+        <button id="findRow">FindRow</button>
+        <ul>
+            <li>Apple</li>
+            <li>Grapes</li>
+            <li>Pear</li>
+            <li>Banana</li>
+        </ul>
+    </body>
+</html>
