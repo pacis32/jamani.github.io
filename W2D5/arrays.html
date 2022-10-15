@@ -7,50 +7,54 @@
     <title>Document</title>
 
     <script>
+        
         window.onload= onloadHandler;
+        let flowers =['rose','chrysanthum','tulip'];
         function onloadHandler(){
-        let flowers=['rose,chrysanthum','tulip'];
+        
         buildList(flowers);
         }
       function buildList(){
         let divP= document.createElement("div");
         document.body.append(divP);
-        DivP.setAttribute("id","checkBoxD");
-        for(let ele of flowers){
+        divP.setAttribute("id","checkboxDiv");
+
+        for(let flower of flowers){
+
             let checkBox1=document.createElement("input");
-            checkBox1.setAttribute("type",checkbox);
+            checkBox1.setAttribute("type","checkbox");
             checkBox1.value=flower;
             let label=document.createElement("label");
             label.value=flower;
             divP.append(checkBox1);
             divP.append(label);
         }
-        function sort(){
+
+
+        
+        function sortList(){
             let sortList= flowers.sort();
-            document.getElementById("divP").remove();
+            document.getElementById("checkboxDiv").remove();
             buildList(sortedList);
         }
         function filterList(){
-            let filteredList= flowers.filter((ele, index)=>
+            let filteredList= flowers.filter( function(ele, index)
             {
                 return ele.length==4;
-            }
-
-        )}
-
-        
-        document.getElementById("checkboxDiv").remove();
+            })
+            document.getElementById("checkboxDiv").remove();
         buildList(filteredList);
+        }
+  
+       
 
       }
 
       // add at any index
       function add(){
         let inputText= document.getElementById("newFlower");
-        flowers.push(inputText)
+        flowers.push(inputText);
       }
-
-
 
     </script>
 </head>
