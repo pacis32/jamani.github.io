@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload= onloadHandler;
+        function onloadHandler(){
+        let flowers=['rose,chrysanthum','tulip'];
+        buildList(flowers);
+        }
+      function buildList(){
+        let divP= document.createElement("div");
+        document.body.append(divP);
+        DivP.setAttribute("id","checkBoxD");
+        for(let ele of flowers){
+            let checkBox1=document.createElement("input");
+            checkBox1.setAttribute("type",checkbox);
+            checkBox1.value=flower;
+            let label=document.createElement("label");
+            label.value=flower;
+            divP.append(checkBox1);
+            divP.append(label);
+        }
+        function sort(){
+            let sortList= flowers.sort();
+            document.getElementById("divP").remove();
+            buildList(sortedList);
+        }
+        function filterList(){
+            let filteredList= flowers.filter((ele, index)=>
+            {
+                return ele.length==4;
+            }
+
+        )}
+
+        
+        document.getElementById("checkboxDiv").remove();
+        buildList(filteredList);
+
+      }
+
+      // add at any index
+      function add(){
+        let inputText= document.getElementById("newFlower");
+        flowers.push(inputText)
+      }
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="sortList()">Sort</button>
+    <br/>
+    <button onclick="add()">Add</button>
+    <input type="text" id='newFlower'/>
+    <br/>
+    <button onclick="filterList()">Filter</button>
+    <br/>
+    <label>Flowers</label>
+</body>
+</html>
