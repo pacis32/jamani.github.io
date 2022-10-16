@@ -6,35 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        window.onload= function (){
-          let myDiv= document.
-         let label1= document.createElement("label");
-         let fNum=document.creteElement("input");
-         fNum.type="button";
+        window.onload=createCalc;
+        
+        function createCalc(){
+          let myDiv= document.createElement("div");
+          myDiv.id="mydiv";
+          let result= document.createElement("div");
+           result.setAttribute("id","rs");
+          
+          document.body.append(myDiv);
+           myDiv.after(result);
+          let para1=document.createElement("p");
+          para1.innerHTML="First Number:";
+         let fNum=document.createElement("input");
+         
+         fNum.type="number";
          fNum.id="num1";
          fNum.min=0;
          fNum.max=100;
          fNum.val="";
-
-         
-
-          
-         let label2= document.createElement("label");
-         let sNum=document.creteElement("input");
-         sNum.type="button";
+    
+         para1.appendChild(fNum);
+       
+         let para2=document.createElement("p");
+         para2.innerHTML="second Number:";
+         let sNum=document.createElement("input");
+         sNum.type="number";
          sNum.id="num2";
          sNum.min=0;
          sNum.max=100;
-         sNum.val="";
-         
+         sNum.val=" ";
+         para2.appendChild(sNum);
+        myDiv.append(para1,para2);
+
+     
+
+        document.getElementById("multiply").onclick =function() {
+          
+                result.innerHTML += 
+                    "<p>" + 
+                    fNum.value+ " * " + sNum.value + " = " + 
+                    fNum.value* sNum.value + 
+                    "</p>";
+            };
+
+            document.getElementById("divide").onclick= function() {
+   
+                result.innerHTML += 
+                    "<p>" + 
+                    fNum.value+ " /" + sNum.value + " = " + 
+                    fNum.value/ sNum.value + 
+                    "</p>";
+            };
+
+            document.getElementById("clear").onclick=function() {
+             result= document.querySelector("#rs");
+                result.innerHTML = "";
+                fNum.value=" ";
+                sNum.value="";
+
+                    
+            };
+
+
+            
         
+       
+
         }
+
+
     </script>
 </head>
 <body>
     <input type="button" id="multiply" value="Multiply!">
     <input type="button" id="divide" value="Divide!">
     <input type="button" id="clear" value="Clear History">
-    <div id="result"></div> 
+    <!-- //<div id="result"></div>  -->
 </body>
 </html>
