@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <script>
+        window.onload=function(){
+            let data = [
+                "Iris atrofusca",
+                "Iris atropurpurea",
+                "Iris bismarckiana",
+                "Iris haynei",
+                "Iris hermona",
+                "Iris lortetii",
+                "Iris mariae",
+                "Iris petrana"
+            ];
+          
+        let myDiv= document.createElement("div");
+       myDiv.setAttribute("id","myDiv");
+       document.body.append(myDiv);
+        let ul=document.createElement("ul");
+        for(let ele of data){
+            let li = document.createElement("li");
+            li.innerHTML=ele; 
+
+            ul.append(li)
+        }
+        myDiv.append(ul);
+    }
+
+       </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
