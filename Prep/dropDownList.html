@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Favorite Character</label>
+    <!-- <select name="favoritecharacter" >  -->
+    <select name="favoritecharacter" size="3" multiple>
+        <option value="US"> United States</option>
+        <option value="ET">Ethopia</option>
+        <option selected value="RM">Romania</option>
+        <option value="RW">Rwanda</option>
+    </select>
+
+    <!-- <select name="favoritecharacter">
+        <optgroup label="Major Characters">
+        <option>Jerry</option>
+        <option>George</option>
+        <option>Kramer</option>
+        <option>Elaine</option>
+        </optgroup>
+        <optgroup label="Minor Characters">
+        <option>Newman</option>
+        <option>Susan</option>
+        </optgroup>
+        </select> -->
+
+    <p>Selected Elements</p>
+    <p id="result"></p>
+<script>
+    window.onload = function (){
+         let selectElement = document.getElementsByName("favoritecharacter")[0];
+        selectElement.onchange = printSelection;
+    }
+  
+    function printSelection(){
+        console.log(this);
+        console.log(this.options);
+        let selectedOption="";
+        for(let option of this.options){
+            console.log(option,"Is Selected", option.selected, option.innerHTML);
+            if(option.selected){
+                selectedOption= selectedOption+" "+option.innerHTML;
+            }
+            
+        }
+       
+        let result = document.getElementById("result");
+        result.innerHTML = selectedOption;
+    }
+</script>
+</body>
+
+</html>

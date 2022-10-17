@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let mn = document.createElement("div");
+        document.body.append(mn);
+        mn.innerHTML = "<h1> Inventory</h1>";
+
+        let labelName = document.createElement("label");
+        labelName.innerHTML = "ProductName";
+        let h1 = document.querySelector("h1");
+        mn.after(labelName);
+        //  console.log(labelName)
+        //text input
+        let nameText = document.createElement("div");
+        // nameText.setAttribute("value","enter name")
+        labelName.after(nameText);
+        nameText.innerHTML = 'Item Name: <input type="text" id ="input1" >';
+        // nameText.id="input1"
+
+        let catlabel = document.createElement("div");
+        nameText.after(catlabel);
+        catlabel.innerHTML = "CategoryName";
+
+        let catText = document.createElement("div");
+        catlabel.after(catText);
+        catText.innerHTML = '<input type="text" id ="input2" >';
+        //catText.id = "input2";
+
+        //quantity
+
+        let qtylabel = document.createElement("div");
+        catText.after(qtylabel);
+        qtylabel.innerHTML = "Quantiy";
+
+        let qtyText = document.createElement("div");
+        qtylabel.after(qtyText);
+        qtyText.innerHTML = '<input type="text"  id ="input3" >';
+       // qtyText.id = "input3 ";
+
+        let btn = document.createElement("button");
+        btn.innerHTML = "add";
+
+        qtyText.after(btn);
+        // btn.innerHTML="<br><button>add</button></br>"
+
+        let newTable = document.createElement("table");
+        
+        btn.after(newTable);
+        newTable.outerHTML =
+          "<table id = 'myTable'><tr><th>names</th><th>category</th><th>qty</th></tr></table>";
+
+        btn.onclick = function () {
+          let nameP = document.getElementById("input1");
+         // console.log(nameP.value);
+          let cat = document.getElementById("input2");
+          let qty = document.getElementById("input3");
+
+          let newRow = document.querySelector("table");
+         
+          newRow.innerHTML =
+            "<tr><td>" +
+            nameP.value +
+            "</td><td>" +
+            cat.value +
+            "</td><td>" +
+            qty.value +
+            "</td></tr>";
+        };
+      };
+    </script>
+  </head>
+  <body>
+   
+  </body>
+</html>
