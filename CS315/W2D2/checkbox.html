@@ -16,12 +16,17 @@
 <label for=" female" value ="female"> female</label>
 <button onclick="choose()">Submit</button>
 
-<p id="output"></p>
+<!-- <p id="output"></p> -->
 </div>
 
 <script>
     function choose(){
         let genders=document.querySelectorAll("input[name='gr']");
+        let output=document.createElement('p');
+        output.id='output';
+        let btn= document.querySelector("button");
+        btn.after(output);
+        
         let selectedGender;
         
         for( let gender of genders){

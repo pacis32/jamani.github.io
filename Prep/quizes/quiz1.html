@@ -5,15 +5,37 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
    <script>
-       window.onload=function (){
-        let myDiv=document.querySelector("div");
-        body.append(myDiv);
-        let label= document.querySelector("label");
-        
-       }
-       
-
-
+    window.onload=function (){
+        let flowers= ['tulip','rose','urujenone'];
+        let button=document.querySelector("button");
+        let label = document.createElement("label");
+        label.innerHTML="Scriptures";
+        button.before(label);
+        let disp= document.createElement("div");
+            disp.setAttribute("id","output")
+     footer.before(disp);
+      let sel= document.createElement("select");
+      label.after(sel);
+      for(let i of flowers){
+      let opt = document.createElement("option");
+        opt.innerHTML=i;
+        sel.append(opt);
+      }
+        function showText(){
+            let chosen;
+         let sec = document.querySelectorAll("option");
+            for (let el of sec){
+                chosen=el.innerHTML;
+            }
+      }
+      
+      if(document.getElementById('newText'))
+        document.getElementById('newText').remove();
+        let selectedLabel = document.createElement("label");
+        document.getElementById('footer').before(chosen);
+    
+      
+    }
    </script>
     </head>
     <body>
