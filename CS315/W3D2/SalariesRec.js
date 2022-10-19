@@ -59,7 +59,7 @@ let company = {
         }
        }
 
-       console.log(nameList(company))
+       console.log(nameList(company));
 
 
        
