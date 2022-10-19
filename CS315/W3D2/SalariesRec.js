@@ -60,3 +60,6 @@ let company = {
        }
 
        console.log(nameList(company))
+
+
+       
