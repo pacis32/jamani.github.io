@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>document.body.innerHTML="<h1>Inventory</h1>"
+
+        let h1 = document.querySelector("h1");
+        
+        const label1 = document.createElement("label");
+        h1.after(label1);
+        label1.innerHTML="<br>ITEM NAME: </br>";
+        let input1 = document.createElement("input");
+        input1.id="input1";
+        label1.after(input1);
+        
+        
+        const label2 = document.createElement("label");
+        input1.after(label2);
+        label2.innerHTML= "<br>ITEM CATEGORY:</br>"
+        let input2 = document.createElement("input");
+        input2.id="input2";
+        label2.after(input2)
+        
+        const label3 = document.createElement("label");
+        input2.after(label3);
+        label3.innerHTML="<br>QUANTITY:</br>";
+        let input3 = document.createElement("input");
+        input3.id="input3";
+        label3.after(input3);
+        //submit btn
+        let sub= document.createElement("div");
+        input3.after(sub);
+        
+        sub.innerHTML="<button>submit</button><button>Save</button><button>SortBy</button><button>Filter</button>";
+
+      
+        
+        let mydiv = document.createElement("div");
+        document.body.append(mydiv);
+        
+        
+        
+        
+        mydiv.innerHTML="<br><table><tr><th>Product Name</th>"+
+        "<th>Category</th><th>Quantity</th></tr></table></br>"
+        //mydiv.id="myTable";
+        sub.onclick=function(){
+        let itemName = document.getElementById("input1");
+        let Cat  = document.getElementById("input2");
+        let qte  = document.getElementById("input3");
+        
+        let tablep = document.querySelector("table")
+        let newRow = document.createElement("tr");
+        tablep.append(newRow);
+        //x.innerHTML +='<tr><td>'+itemName.value+'</td><td>'+Cat.value+'</td><td>'+qte.value+'</td></tr>';
+        
+        newRow.innerHTML = '<tr><td>'+itemName.value+'</td><td>'+Cat.value+'</td><td>'+qte.value+'</td></tr>';
+        newRow.style.color="red";
+        itemName.value="";
+        Cat.value ="";
+        qte.value ="";
+        }</script>
+</body>
+</html>

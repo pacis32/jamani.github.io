@@ -1,0 +1,43 @@
+
+   
+  
+  .top-banner {
+    border: 1px;
+    margin-bottom: 30px;
+    background-color: green;
+  }
+  
+  .cont{
+    width: 80vh;
+    height: 20vh;
+    color:tomato;
+    overflow: hidden;
+  }
+  @keyframes scrolling {
+    0%{
+      transform: translateX(0);
+    
+    }
+    100%{
+      transform: translateX(100vh);
+    }
+  }
+
+  .cont-show{ 
+    list-style: none;
+    display: flex;
+    animation:scrolling 20s linear infinite  ;
+  }
+  .cont-show li{
+    display: flex;
+    width: 10vh;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  
+
+  }
+  
+
