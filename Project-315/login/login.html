@@ -52,8 +52,11 @@
             () => {
                if(username.value == "admin@miu.edu" && password.value == "admin"){
                   window.location = "../inventory/inventory.html";
-               }else{
+               }else if(username.value == "custom@miu.edu" && password.value == "custom"){
                   window.location = "../home.html";
+               }
+               else{
+                  alert("Please Enter a valid username or password")
                }
             }
          );

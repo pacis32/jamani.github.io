@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="../styles/myStyle.css"> -->
+  <style>
+  #items {
+    border-collapse: collapse;
+  
+    width: 100%;
+  }
+  #items td,
+  #items th {
+    border: 1px solid #ddd;
+  
+    padding: 8px;
+  }
+  
+  #items tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #items tr:hover {
+    background-color: #ddd;
+  }
+  
+  table{
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+  
+  #items th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(194, 193, 111);
+    border: 1px solid black;
+    color: white;
+  }
+  
+  input[type="text"],
+  select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .inventory{
+    padding-left: 20px;
+    padding: 12px 20px;
+    
+  }
+  
+  </style>
+</head>
+<body>
+  <h1>Inventory</h1>
+  <div>
+    <p>
+      Title: &nbsp; &nbsp; &nbsp;
+      <input type="text" value="" id="title" />
+    </p>
+    <p>
+       Category: &nbsp;
+      <input type="text" value="" id="category" />
+    </p>
+    <p>
+        Description: &nbsp;
+       <input type="text" value="" id="description" />
+     </p>
+
+    <p>
+      Quantity: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      <input type="text" value="" id="quantity" />
+    </p>
+    <p>
+      Price: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      <input type="text" value="" id="price" />
+    </p>
+    <p>
+        Discount: &nbsp; &nbsp; &nbsp;
+        <input type="text" value="" id="discount" />
+      </p>
+    <p>
+      <input type="submit" value="Add" class="addButton" onclick="add()" />
+    </p>
+    <input type="submit" value="filter" onclick="filter()" />
+    <br/>
+  </div>
+  <table id="items">
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </table>
+  <script>
+    const array = [];
+    let index = 0;
+
+    function add() {
+      index++;
+      let key = {
+        id: index,
+        name: document.getElementById("title").value,
+        category: document.getElementById("category").value,
+        description: document.getElementById("description").value,
+        quantity: document.getElementById("quantity").value,
+        price: document.getElementById("price").value,
+        discount: document.getElementById("discount").value,
+       
+      };
+      array.push(key);
+
+
+      let items = document.getElementById("items");
+      let tr = document.createElement("tr");
+      items.append(tr);
+      let titleTd = document.createElement("td");
+      titleTd.innerHTML = document.getElementById("title").value;
+      tr.append(titleTd);
+
+      let categoryTd = document.createElement("td");
+      categoryTd.innerHTML = document.getElementById("category").value;
+      tr.append(categoryTd);
+
+      let descriptionTd = document.createElement("td");
+      descriptionTd.innerHTML = document.getElementById("description").value;
+      tr.append(descriptionTd);
+
+      let quantityTd = document.createElement("td");
+      quantityTd.innerHTML = document.getElementById("quantity").value;
+      tr.append(quantityTd);
+      let priceTd = document.createElement("td");
+      priceTd.innerHTML = document.getElementById("price").value;
+      tr.append(priceTd);
+      let discountTd = document.createElement("td");
+      discountTd.innerHTML = document.getElementById("discount").value;
+      tr.append(discountTd);
+
+      //<tr> <td><button>Edit</button></td>
+      let editTd = document.createElement("td");
+      let button = document.createElement("button");
+      button.innerHTML = "Edit";
+      button.setAttribute("myId", index);
+      button.onclick = function () {
+       
+        let childNodes = this.parentNode.parentNode.childNodes;
+
+      
+        document.getElementById("title").childNodes[0].innerHTML;
+        document.getElementById("category").childNodes[1].innerHTML;
+        document.getElementById("description").childNodes[2].innerHTML;
+        document.getElementById("quantity").childNodes[3].innerHTML;
+        document.getElementById("price").childNodes[4].innerHTML;
+        document.getElementById("discount").childNodes[5].innerHTML;
+
+        let myId = this.getAttribute("myId");
+        array.forEach(function (key) {
+          if (key.id == myId) {
+            key.title = document.getElementById("title").value;
+            key.category = document.getElementById("category").value;
+            key.description = document.getElementById("description").value;
+            key.quantity = document.getElementById("qantity").value;
+            key.price = document.getElementById("price").value;
+            key.discount = document.getElementById("discount").value;
+          }
+        })
+
+      }
+      editTd.append(button);
+      tr.append(editTd);
+
+      let td = document.createElement("td");
+      let deleteButton = document.createElement("button");
+      button.setAttribute("myId", index);
+      deleteButton.innerHTML = "Delete";
+      deleteButton.onclick = function () {
+        let myId = this.getAttribute("myId")
+        console.log(this.getAttribute("myId"));
+        array = array.filter((key) => key.id != myId);
+        this.parentNode.parentNode.remove();
+
+      }
+      td.append(deleteButton);
+      tr.append(td);
+    }
+
+    function filter() {
+      console.log(array);
+      let filteredArray = array.filter((key) => Number(key.quantity) > 100);
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        console.log(eachTr.children[2]);
+        if (Number(eachTr.children[2].innerHTML) < 100) {
+          eachTr.style.display = "none";
+        }
+
+      }
+    }
+
+    
+  </script>
+</body>

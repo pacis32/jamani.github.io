@@ -67,29 +67,48 @@ document.body.after(myTable);
 
 
 myTable.innerHTML="<tr><th>Product Name</th>"+
-"<th>Category</th><th>Quantity</th></tr>"
+"<th>Category</th><th>Quantity</th><th>Delete</th></tr>"
 myTable.id="tableId";
 let arrayItem= [];
 addBtn.onclick=function(){
-let itemName = document.getElementById("prodName").value;
+    //delete button 
+    let td = document.createElement("td");
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("id", 'index');
+    deleteButton.innerHTML = "Delete";
+    deleteButton.onclick = function () {
+      let myId = this.getAttribute("myId")
+      console.log(this.getAttribute("myId"));
+      array = array.filter((item) => item.id != myId);
+
+      console.log(this.parentNode.parentNode);
+      this.parentNode.parentNode.remove();
+
+    }
+  
+  
+    //delete btn end
+let itemN = document.getElementById("prodName").value;
 let Cat  = document.getElementById("prodCategory").value;
 let qte  = document.getElementById("prodQuantity").value;
-
+let del= document.getElementById("delId");
 let dataTable = document.querySelector("table")
 let newRow = document.createElement("tr");
 dataTable.append(newRow);
-newRow.innerHTML = '<tr><td>'+itemName+'</td><td>'+Cat+'</td><td>'+qte+'</td></tr>';
+newRow.innerHTML = '<tr><td>'+itemN+'</td><td>'+Cat+'</td><td>'+qte+'</td></tr>';
+let tr= document.querySelector('tr');
 
-
-newRow.style.color="red";
-itemName.value="";
+td.append(deleteButton);
+tr.append(td);
+newRow.style.color ="red";
+itemN.value ="";
 Cat.value ="";
 qte.value ="";
-let product={iteName:itemName,Cat:Cat,qte:qte}
+let product={iteName:itemN,Cat:Cat,qte:qte}
 arrayItem.push(product);
 // console.log(arrayItem);
+    
 }
-
 filterBtn.onclick =
     function () {
         console.log(arrayItem);
@@ -104,10 +123,11 @@ filterBtn.onclick =
         for(let j = 0; j < filteredArray.length; j++){
             //Insert row
             let filteredRow = document.createElement('tr');
-            filteredRow.innerHTML ='<td>' + filteredArray[j].itemName +
-            '</td><td>' + filteredArray[j].Cat + '</td>' +
+            filteredRow.innerHTML ='<td>' + filteredArray[j].itemN +
+            '</td> <td>' + filteredArray[j].Cat + '</td>' +
             '<td>' + filteredArray[j].qte + '</td>'
             dataTable.appendChild(filteredRow);
+            console.log(filteredRow)
         }
       }
     
