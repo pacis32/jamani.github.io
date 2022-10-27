@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Log In - American Eagle</title>
+      <link rel="stylesheet" href="login.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login 
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="form-inner">
+               <form id="myForm" action="#" class="login">
+                  <div class="field">
+                     <input id="email" type="text" placeholder="Email Address" title="Email pattern required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                  </div>
+                  <div class="field">
+                     <input id="password" type="password" pattern=".{8,}" title="At least 8 characters required" placeholder="Password" required />
+                  </div>
+                  <div class="pass">
+                    <div class="pass-validate">
+                        <em>At least 8 Characters</em>
+                     </div>
+                      <div class="pass-link">
+                         <a href="#">Reset password?</a>
+                      </div>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login"id='login'>
+                  </div>
+                  <div class="signup-link">
+                     <a href="signup.html">Create A New</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         // Login btn
+         let loginBtn = document.getElementById("login");
+         let username = document.getElementById("email");
+         let password = document.getElementById("password");
+      
+
+         loginBtn.onclick =(
+            () => {
+               // let admins=["admin@miu.edu","jamani@miu.edu","mmartin@miu.edu","jhabanabakize@miu.edu"];
+               let email=document.querySelector("#email").value;
+               let password=document.querySelector("#password").value;
+               
+               if(email == "admin@miu.edu" && password == "admin"){
+                  window.location = "../inventory/inventory.html";
+               }
+               else{
+                  window.location='../home.html'
+               }
+              
+              
+               
+         });
+
+         // function login() {
+      //       let managers = ["gmuhikira2@gmail.com", "tuhairweronnie@gmail.com", "spaval@miu.edu", "tekletsadikyigzaw@gmail.com"]
+      //       let email = document.getElementsByName("email")[0].value;
+      //       console.log(email);
+      //       console.log(managers);
+      //       for (let element of managers) {
+      //           if (element == email) {
+      //               window.location.href = "./managerInventory/invetory.html"
+      //           }
+      //       }
+      //   }
+         
+      </script>
+   </body>
+</html>
