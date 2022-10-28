@@ -139,7 +139,7 @@ div.custom-nav li a:hover {
 
 .product-container .card .info .price::before{
     content: "$";
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
 }
 

@@ -1,0 +1,32 @@
+.selected-products{
+    display: flex;
+    gap: 80px;
+   border: 1px solid rgb(128, 128, 128);
+   border-radius: 5px;
+    
+}
+#item-title{
+ font-size: 20px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+#item-discount{
+    background-color: brown;
+    width: 78px;
+    text-align: center;
+    color: white;
+    border-radius: 40px;
+}
+#item-price{
+    color: brown;
+}
+#item-desc{
+    color: rgb(127, 195, 255);
+    font-style: italic;
+}
+#btn{
+    border-radius: 30px;
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px 20px 10px 20px;
+}

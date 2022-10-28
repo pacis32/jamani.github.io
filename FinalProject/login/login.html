@@ -50,32 +50,14 @@
 
          loginBtn.onclick =(
             () => {
-               // let admins=["admin@miu.edu","jamani@miu.edu","mmartin@miu.edu","jhabanabakize@miu.edu"];
-               let email=document.querySelector("#email").value;
-               let password=document.querySelector("#password").value;
-               
-               if(email == "admin@miu.edu" && password == "admin"){
+               if(username.value == "admin@miu.edu" && password.value == "admin"){
                   window.location = "../inventory/inventory.html";
-               }
-               else{
-                  window.location='../home.html'
-               }
+               }else{
               
-              
-               
-         });
+                  window.location="../home.html";
+            }
 
-         // function login() {
-      //       let managers = ["gmuhikira2@gmail.com", "tuhairweronnie@gmail.com", "spaval@miu.edu", "tekletsadikyigzaw@gmail.com"]
-      //       let email = document.getElementsByName("email")[0].value;
-      //       console.log(email);
-      //       console.log(managers);
-      //       for (let element of managers) {
-      //           if (element == email) {
-      //               window.location.href = "./managerInventory/invetory.html"
-      //           }
-      //       }
-      //   }
+         });
          
       </script>
    </body>

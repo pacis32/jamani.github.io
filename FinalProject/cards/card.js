@@ -94,8 +94,14 @@ const arrProducts = [
 ];
 
 //need this to append
-const productContainer = document.querySelector(".product-container");
+window.onload = function() {
 
+ 
+  
+  document.getElementById("cartButton").onclick = handleCartButtonClick;
+
+};
+const productContainer = document.querySelector(".product-container");
 const displayProducts = (
   urlValue,
   titleValue,
@@ -165,7 +171,7 @@ const displayProducts = (
 const generateData = () => {
   arrProducts.forEach((element) => {
     displayProducts(
-      "model.html?ref=" + element.id,
+     "model.html?ref=" + element.id,
       element.title,
       element.category,
       element.image,
@@ -177,7 +183,7 @@ const generateData = () => {
   });
 };
 
-generateData();
+
 
 // generate after
 function generateDataAfter(data) {
@@ -225,4 +231,31 @@ function getItemById(id) {
     }
   }
   return null;
+}
+
+let cartButton=document.querySelector("#btn")
+// console.log("hiiiiiiiiiiiiii")
+// console.log(cartButton);
+cartButton.onclick = function(event){
+  event.preventDefault();
+  let currentURLParametters = location.search;
+  currentURLParametters = new URLSearchParams(currentURLParametters);
+
+  let itemId = currentURLParametters.get("ref");
+  let item = getItemById(itemId);
+
+  handleAddToCart(item);
+}
+
+
+
+function handleCartButtonClick(event) {
+  event.preventDefault();
+  let cartDiv = document.querySelector("#cartDiv");
+
+  if(cartDiv.hidden) {
+      generateCart();
+  }
+
+  cartDiv.hidden = !cartDiv.hidden;
 }
