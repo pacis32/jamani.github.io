@@ -1,0 +1,190 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="inventory.css"> 
+</head>
+<body>
+  <h1>Inventory</h1>
+  <div class=" one">
+    <ul>
+      <li><label  for=""> Title: </label>
+        <input style="margin-left:50px;" type="text" value="" id="title" /></li>
+    
+    <li><label for=""> Category: </label>
+     
+      <input  style=" margin-left:22px;" type="text" value="" id="category" /></li>
+
+
+    <li> <label  for=" "> Description:</label>
+     
+         <input style=" margin-left:5px;" type="text" value="" id="description" /></li>
+    
+    <li> <label for="">Quantity:</label>
+      
+        <input style=" margin-left:23px;"type="number" value="" id="quantity" /></li>
+    
+    <li> <label for="">  Price:</label>
+    
+      <input  style=" margin-left:44px;"type="number" value="" id="price" /></li>
+     
+    <li>  <label for="">  Discount:</label>
+    
+      <input style=" margin-left:20px;"type="number" value="" id="discount" /></li>
+  
+  </ul>
+  
+    
+    <div class="buttons">
+    <input type="submit" value="Add" class="addButton" onclick="add()" />
+    <input type="submit" value="filter" onclick="filter()" />
+    <input type="submit" value="Clear Filter" onclick="clearFilter()" />
+  </div>
+  </div>
+  <table id="items">
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </table>
+  <script>
+    var array = [];
+    var index = 0;
+
+    function add() {
+      index++;
+      var item = {
+        id: index, title: document.getElementById("title").value,
+        category: document.getElementById("category").value,
+        description: document.getElementById("description").value,
+        quantity: Number(document.getElementById("quantity").value),
+        price: Number(document.getElementById("price").value),
+        discount: document.getElementById("discount").value
+      };
+      array.push(item);
+
+      savedata(item)
+
+      let items = document.getElementById("items");
+      let tr = document.createElement("tr");
+      items.append(tr);
+      let titleTd = document.createElement("td");
+      titleTd.innerHTML = document.getElementById("title").value;
+      tr.append(titleTd);
+
+      let categoryTd = document.createElement("td");
+      categoryTd.innerHTML = document.getElementById("category").value;
+      tr.append(categoryTd);
+      let descriptionTd = document.createElement("td");
+      descriptionTd.innerHTML = document.getElementById("description").value;
+      tr.append(descriptionTd);
+
+      let quantityTd = document.createElement("td");
+      quantityTd.innerHTML = document.getElementById("quantity").value;
+      tr.append(quantityTd);
+
+      let priceTd = document.createElement("td");
+      priceTd.innerHTML = document.getElementById("price").value;
+      tr.append(priceTd);
+
+      let discountTd = document.createElement("td");
+      discountTd.innerHTML = document.getElementById("discount").value;
+      tr.append(discountTd);
+
+      //<tr> <td><button>Edit</button></td>
+      let editTd = document.createElement("td");
+      let button = document.createElement("button");
+      button.innerHTML = "Edit";
+      button.setAttribute("myId", index);
+      button.onclick = function () {
+        console.log(this)//button
+        console.log(this.parentNode)//td
+        console.log(this.parentNode.parentNode)//tr
+        console.log(this.parentNode.parentNode.childNodes)// All 5 columns(td's)
+        let childNodes = this.parentNode.parentNode.childNodes;
+
+        document.getElementById("title").value = ""//childNodes[0].innerHTML;
+        document.getElementById("category").value = ""//childNodes[1].innerHTML;
+        document.getElementById("description").value = ""//childNodes[1].innerHTML;
+        document.getElementById("quantity").value = 4//childNodes[2].innerHTML;
+        document.getElementById("price").value = 5//childNodes[1].innerHTML;
+        document.getElementById("discount").value = 6//childNodes[1].innerHTML;
+
+        let myId = this.getAttribute("myId");
+        array.forEach(function (item) {
+          if (item.id == myId) {
+            item.title = document.getElementById("title").value;
+            item.category = document.getElementById("category").value;
+            item.description = document.getElementById("description").value;
+            item.quantity = document.getElementById("quantity").value;
+            item.price = document.getElementById("price").value;
+            item.discount = document.getElementById("discount").value;
+          }
+        })
+
+      }
+      editTd.append(button);
+      tr.append(editTd);
+
+      let td = document.createElement("td");
+      let deleteButton = document.createElement("button");
+      button.setAttribute("myId", index);
+      deleteButton.innerHTML = "Delete";
+      deleteButton.onclick = function () {
+        let myId = this.getAttribute("myId")
+        console.log(this.getAttribute("myId"));
+        array = array.filter((item) => item.id != myId);
+
+        console.log(this.parentNode.parentNode);
+        this.parentNode.parentNode.remove();
+
+      }
+      td.append(deleteButton);
+      tr.append(td);
+    }
+
+    function filter() {
+      console.log(array);
+      let filteredArray = array.filter((item) => Number(item.quantity) > 100);
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        console.log(eachTr.children[3]);
+        if (eachTr.children[3].innerHTML < 100) {
+          eachTr.style.display = "none";
+        }
+
+      }
+    }
+
+    function clearFilter() {
+      console.log(array);
+      let filteredArray = array.filter((item) => item.quantity > 100);
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        console.log(eachTr.children[3]);
+        eachTr.style.display = "";
+      }
+
+    }
+
+    function savedata(product){
+    fetch("http://localhost:3000/prods/1",{
+        method:"POST",
+        headers:{
+            "content-Type":"application/json"
+        },
+        body:JSON.stringify(product)
+    })
+}
+  </script>
+</body>
+
+</html>
