@@ -36,7 +36,7 @@ app.get('/process_get', function (req, res) {
 con.connect(function(err) {
    if (err) throw err;
    console.log("Connected!");
-   var sql = 'INSERT INTO user1 (first_name, last_name,user_id,password,start_date,role) VALUES (?, ?, ?,?,?,?)';
+   var sql = 'INSERT INTO user (first_name, last_name,user_id,password,start_date,role) VALUES (?, ?, ?,?,?,?)';
    var values=[ response.first_name, response.last_name,response.user_id,response.password,response.start_date,response.role]
    con.query(sql, values,function (err, result) {
      if (err) throw err;
