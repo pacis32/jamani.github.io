@@ -33,18 +33,32 @@ app.post('/auth', function(request, response) {
 	let user_id = request.body.user_id;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty
+
+
 	if (user_id && password) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM user WHERE user_id = ? AND password = ?', [user_id, password], function(error, results, fields) {
+		connection.query('SELECT role FROM user WHERE user_id = ? AND password = ?', [user_id, password], function(error, results, fields) {
 			// If there is an issue with the query, output the error
 			if (error) throw error;
 			// If the account exists
 			if (results.length > 0) {
+             // A user with the entered username was found
+             // Get the role of the user
+				var role= results[0].role;
 				// Authenticate the user
+				
+        		// If the entered username and password are valid, redirect the user to the appropriate page based on their role
+				if(role=='admin'){
+
+				
 				request.session.loggedin = true;
 				request.session.user_id = user_id;
 				// Redirect to home page
-				response.redirect('http://127.0.0.1:5501/FinalProject-WAP/../home.html');
+				response.redirect('http://127.0.0.1:5501/FinalProject-WAP/home.html');
+				}else{
+					response.redirect('http://127.0.0.1:5501/FinalProject-WAP/cs415/dbproject/public/inventory.html')
+				}
+
 
                
 			} 
