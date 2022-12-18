@@ -49,8 +49,6 @@ app.post('/auth', function(request, response) {
 				
         		// If the entered username and password are valid, redirect the user to the appropriate page based on their role
 				if(role=='admin'){
-
-				
 				request.session.loggedin = true;
 				request.session.user_id = user_id;
 				// Redirect to home page
