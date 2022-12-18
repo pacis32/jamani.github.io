@@ -1,28 +1,25 @@
 const mysql = require('mysql');
 const express = require('express');
-const session = require('express-session');
+ const session = require('express-session');
 const path = require('path');
 
-// connection to database
-
-const connection= mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password:'',
-    database: 'userDB'
+const connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'root',
+	database : 'userDB'
 });
 
 const app = express();
 
 app.use(session({
-    secret:'secret',
-    resave:true,
-    saveUninitialized:true
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
 }));
-
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname,'static')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'static')));
 
 // http://localhost:3000/
 app.get('/', function(request, response) {
@@ -33,22 +30,26 @@ app.get('/', function(request, response) {
 // http://localhost:3000/auth
 app.post('/auth', function(request, response) {
 	// Capture the input fields
-	let username = request.body.username;
+	let user_id = request.body.user_id;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty
-	if (username && password) {
+	if (user_id && password) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM user WHERE user_id = ? AND password = ?', [user_id, password], function(error, results, fields) {
 			// If there is an issue with the query, output the error
 			if (error) throw error;
 			// If the account exists
 			if (results.length > 0) {
 				// Authenticate the user
 				request.session.loggedin = true;
-				request.session.username = username;
+				request.session.user_id = user_id;
 				// Redirect to home page
-				response.redirect('/home');
-			} else {
+				response.redirect('http://127.0.0.1:5501/FinalProject-WAP/home.html');
+
+               
+			} 
+            
+            else {
 				response.send('Incorrect Username and/or Password!');
 			}			
 			response.end();
@@ -64,7 +65,7 @@ app.get('/home', function(request, response) {
 	// If the user is loggedin
 	if (request.session.loggedin) {
 		// Output username
-		response.send('Welcome back, ' + request.session.username + '!');
+		response.send('Welcome back, ' + request.session.user_id + '!');
 	} else {
 		// Not logged in
 		response.send('Please login to view this page!');
