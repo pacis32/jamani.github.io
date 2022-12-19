@@ -33,7 +33,7 @@ app.get('/process_get', function (req, res) {
       role:req.query.role
    };
 
-con.connect(function(err) {
+con.connect('/add-update-user', function(req, res) {
    if (err) throw err;
    console.log("Connected!");
    var sql = 'INSERT INTO user (first_name, last_name,user_id,password,start_date,role) VALUES (?, ?, ?,?,?,?)';
@@ -46,10 +46,68 @@ con.connect(function(err) {
    console.log(response);
    res.end(JSON.stringify(response));
 })
-var server = app.listen(105, function () {
+var server = app.listen(109, function () {
    var host = server.address().address
    var port = server.address().port
    
    console.log("Example app listening at http://%s:%s", host, port)
 });
 
+
+// con.connect(function(err) {
+//    if (err) throw err;
+//    var sql = "UPDATE user SET user_id = '' WHERE address = 'Valley 345'";
+  
+//    con.query(sql, function (err, result) {
+//      if (err) throw err;
+//      console.log(result.affectedRows + " record(s) updated");
+//    });
+//  });
+
+/*
+
+
+<form action="/add-update-user" method="POST">
+
+ <input type="hidden" name="action" value="add">
+
+ <!-- form fields for adding a user -->
+
+ <button type="submit">Add User</button>
+
+</form>
+
+ 
+
+<form action="/add-update-user" method="POST">
+
+ <input type="hidden" name="action" value="update">
+
+ <!-- form fields for updating a user -->
+
+ <button type="submit">Update User</button>
+
+</form>
+
+ 
+
+ 
+
+ 
+
+app.post('/add-update-user', function(req, res) {
+
+ var action = req.body.action;
+
+ if (action == 'add') {
+
+   // add the user to the database
+
+ } else if (action == 'update') {
+
+   // update the user in the database
+
+ }
+
+});
+*/
