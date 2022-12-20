@@ -1,6 +1,7 @@
 const express=require('express');
 const connection= require('../connection');
 const router = express.Router();
+
 router.post('/create',(req,res,next)=>{
     let user=req.body;
    console.log(user);
@@ -22,6 +23,7 @@ router.get('/',(req,res,next)=>{
     var query= "select * from users ";
     connection.query(query,(err,results)=>{
       if(!err){
+       
         return res.status(200).json(results);
       }
       else{
@@ -40,7 +42,7 @@ router.get('/',(req,res,next)=>{
             if(results.affectedRows==0){
                 return res.status(400).json({message:'user id doesnot found'})
             }
-           
+            console.log(results);
                 return res.status(200).json({message:'User updated successfully'})
         
         }
@@ -55,7 +57,7 @@ router.get('/',(req,res,next)=>{
 
   router.delete('/delete/:id',(req,res,next)=>{
     const id =req.params.id;
-    var query= 'delete from users where id=?';
+    var query= 'delete from users where user_id=?';
     connection.query(query,[id],(error, results)=>{
         if(!err){
             if(results.affectedRows ==0){
@@ -65,6 +67,7 @@ router.get('/',(req,res,next)=>{
 
         }
         else{
+            console.error()
             return res.status(500).json(err);
         }
     })
