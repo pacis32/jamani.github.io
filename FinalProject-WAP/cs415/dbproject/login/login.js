@@ -53,7 +53,7 @@ app.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.user_id = user_id;
 				// Redirect to home page
-				response.redirect('http://localhost:3005/user/register')
+				response.redirect('http://127.0.0.1:5501/FinalProject-WAP/cs415/dbproject/CRUD_MYSQL/routes/register.html')
 				
 				}else{
 					request.session.loggedin = true;
