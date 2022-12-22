@@ -46,7 +46,7 @@ app.delete("/prods/:userId/:prodid", async (req, res) => {
 
 
 
-app.listen(3001, () => console.log("listening on port 3001"));
+app.listen(3005, () => console.log("listening on port 3001"));
 
 
 

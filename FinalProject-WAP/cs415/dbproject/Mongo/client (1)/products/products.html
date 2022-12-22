@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="product.css">
+
+
+</head>
+<body>
+    <div id="myDiv" >
+        <!-- <img src='/mages/first.jpg width 60px height 50px'>,
+        <img src="../images/first.jpg"> -->
+
+
+    </div>
+
+
+
+
+
+    <script>
+     
+        const arrProducts=[
+            {
+
+                image: "<img src='../images/first.jpg 'width=60px height=60px>",
+                name: "AE Super Soft Flannel Shirt",
+                category: "tops",
+                // quantity: 3,
+                
+                // rating: "<img src='./images/rating.png' alt='Card image cap'>",
+                // price: 18.49,
+                // ratingNum: 4,
+                // id: 'top1'
+        
+        },
+         {
+            name: "AE AirFlex+ Skinny Jeans",
+            category: "bottom",
+        //     quantity: 1,
+        //     image: "<img class='card-img-top' name='jeans1' src='./images/jeans.png' alt='Card image cap' >",
+        //     rating: "<img src='./images/rating.png' alt='Card image cap'>",
+        //     price: 18.49,
+        //     ratingNum: 4,
+        //     id: 'bottom1'
+        
+         },
+        
+        ]
+        
+        
+       
+            let div=document.querySelector('#myDiv')
+
+            for(let items of arrProducts){
+                // console.log(items.name)
+            let newDiv=document.createElement('div')
+            
+            let name=document.createElement('p')
+            name.id="myId";
+             name.innerHTML=items.name+"</br>"+ items.category+"</br>"+items.image
+            
+
+            newDiv.appendChild(name)
+            div.appendChild(newDiv)
+
+        
+            }
+        
+        
+      
+        </script>
+</body>
+</html>

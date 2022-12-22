@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.get('/', function(request, response) {
 	// Render login template
 	response.sendFile(path.join(__dirname + '/login.html'));
+
 });
 
 // http://localhost:3000/auth
@@ -46,13 +47,13 @@ app.post('/auth', function(request, response) {
              // Get the role of the user
 				var role= results[0].role;
 				// Authenticate the user
-				
+				let usrid = results[0].user_id
         		// If the entered username and password are valid, redirect the user to the appropriate page based on their role
 				if(role=='admin'){
 				request.session.loggedin = true;
 				request.session.user_id = user_id;
 				// Redirect to home page
-				response.redirect('http://localhost:105/')
+				response.redirect('http://localhost:3001/user/register')
 				
 				}else{
 					request.session.loggedin = true;
