@@ -53,12 +53,12 @@ app.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.user_id = user_id;
 				// Redirect to home page
-				response.redirect('http://127.0.0.1:5501/FinalProject-WAP/cs415/dbproject/CRUD_MYSQL/routes/register.html')
+				response.redirect('http://localhost:3000/user/register')
 				
 				}else{
 					request.session.loggedin = true;
 				    request.session.user_id = user_id;
-					response.redirect('http://127.0.0.1:5501/FinalProject-WAP/home.html');
+					response.redirect('http://127.0.0.1:5501/FinalProject-WAP/cs415/dbproject/Mongo/client%20(1)/home.html');
 				}
 
 
@@ -89,4 +89,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-app.listen(3000);
+app.listen(3001);

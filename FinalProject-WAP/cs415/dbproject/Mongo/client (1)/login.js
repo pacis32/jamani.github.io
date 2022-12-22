@@ -7,7 +7,7 @@ const password = document.getElementById('password');
 loginfunc = ()=>{
     let usr = {username:username.value, password:password.value}
     
-    fetch('http://localhost:3001/login', {
+    fetch('http://localhost:3002/login', {
         method:"POST",
         headers:{
             "content-Type":"application/json"
